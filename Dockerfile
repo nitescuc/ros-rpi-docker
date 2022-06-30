@@ -11,7 +11,7 @@ RUN echo "deb http://archive.raspberrypi.org/debian/ buster main ui" > /etc/apt/
   wget https://archive.raspberrypi.org/debian/raspberrypi.gpg.key -O - | apt-key add - && \
   apt update
 
-RUN apt install -y pigpio
+RUN apt update && apt install -y pigpio ros-noetic-rosbridge-server ros-noetic-tf2-web-republisher
 
 ADD launch.sh /home/ros
 
