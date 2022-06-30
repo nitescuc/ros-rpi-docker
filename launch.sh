@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SLEEP 10
 source /catkin_ws/devel/setup.bash
-roslaunch rosbridge_server rosbridge_websocket.launch &
+roscore &
+roslaunch rosbridge_server rosbridge_websocket.launch --wait &
 rosrun tf2_web_republisher tf2_web_republisher &
-roslaunch car_launcher car_launcher.launch
+roslaunch car_launcher car_launcher.launch --wait
